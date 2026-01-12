@@ -2,38 +2,45 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function BrandsSection() {
   const categories = [
     {
       title: "Food & Beverages",
       image: "/foodnbeverages.jpg",
-      gradient: "from-orange-500/20 to-transparent"
+      gradient: "from-orange-500/20 to-transparent",
+      link:"/brands/food-beverages"
     },
     {
       title: "Mini Home Appliances",
       image: "/minihomeappliance.jpg",
-      gradient: "from-red-500/20 to-transparent"
+      gradient: "from-red-500/20 to-transparent",
+        link:"/brands/mini-home-appliances"
     },
     {
       title: "Health & Personal Care",
-      image: "/healthpersonal.jpg",
-      gradient: "from-blue-500/20 to-transparent"
+      image: "/Cosmetics.png",
+      gradient: "from-blue-500/20 to-transparent",
+          link:"/brands/health-personal-care"
     },
     {
       title: "Home Care",
       image: "/homecare.jpg",
-      gradient: "from-green-500/20 to-transparent"
+      gradient: "from-green-500/20 to-transparent",
+          link:"/brands/home-care"
     },
     {
       title: "Hospitality Services",
       image: "/hospitality.jpg",
-      gradient: "from-amber-500/20 to-transparent"
+      gradient: "from-amber-500/20 to-transparent",
+          link:"/brands/hospitality"
     },
     {
       title: "Consumer & Electronics",
       image: "/consumer.jpg",
-      gradient: "from-purple-500/20 to-transparent"
+      gradient: "from-purple-500/20 to-transparent",
+          link:"/brands/consumer-electronics"
     }
   ];
 
@@ -48,7 +55,7 @@ export default function BrandsSection() {
   const duplicatedBrands = [...brands, ...brands, ...brands];
 
   return (
-    <section className="w-full bg-gray-50 py-16 md:py-24">
+    <section className="w-full bg-gray-50 py-16 md:py-24">  
       <div className="max-w-7xl mx-auto px-6 md:px-8">
         {/* Header */}
         <div className="mb-12">
@@ -64,10 +71,17 @@ export default function BrandsSection() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {categories.slice(0, 4).map((category, index) => (
-            <div
-              key={index}
-              className="relative rounded-3xl overflow-hidden h-64 group cursor-pointer"
-            >
+             <Link href={category.link}>
+<motion.div
+  key={index}
+  whileHover={{ scale: 1.03 }}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+  className="relative rounded-3xl overflow-hidden h-64"
+>
+
               <img
                 src={category.image}
                 alt={category.title}
@@ -79,16 +93,25 @@ export default function BrandsSection() {
                   {category.title}
                 </h3>
               </div>
-            </div>
+            </motion.div>
+             </Link>
+         
           ))}
         </div>
 
         <div className="flex flex-col md:flex-row justify-center gap-6 mb-16">
           {categories.slice(4, 6).map((category, index) => (
-            <div
-              key={index + 4}
+            <motion.div
+  key={index}
+  whileHover={{ scale: 1.03 }}
+  initial={{ opacity: 0, y: 30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5 }}
+            
               className="relative rounded-3xl overflow-hidden h-64 w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)] group cursor-pointer"
             >
+            <Link href={category.link}>
               <img
                 src={category.image}
                 alt={category.title}
@@ -100,7 +123,9 @@ export default function BrandsSection() {
                   {category.title}
                 </h3>
               </div>
-            </div>
+            </Link>
+            </motion.div>
+         
           ))}
         </div>
 
@@ -147,7 +172,7 @@ export default function BrandsSection() {
             playsInline
             className="absolute inset-0 w-full h-full object-cover"
           >
-            <source src="/bodylotion.mp4" type="video/mp4" />
+            <source src="/zemexsecond.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-black/50" />
           <div className="relative h-full flex flex-col items-center justify-center text-center px-6">

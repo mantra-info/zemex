@@ -42,7 +42,7 @@ export default function NewsEventsPage() {
         
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           <span className="bg-[#3b4b8a] text-xs font-medium px-4 py-1.5 rounded-full mb-8">
-            News&Events
+            News & Events
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold leading-relaxed">
             Latest updates from our company and brands.
@@ -56,7 +56,7 @@ export default function NewsEventsPage() {
     <div className="lg:col-span-2 group cursor-pointer flex flex-col">
       <div className="relative aspect-[16/10] mb-6 overflow-hidden rounded-lg">
         <Image 
-          src="/consumer.jpg"
+          src="/foodnbeverages.jpg"
           alt="Main post"
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"

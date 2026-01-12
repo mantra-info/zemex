@@ -2,6 +2,7 @@ import React from 'react';
 
 import Footer from '../../components/Footer';
 import Navbar from '@/components/Navbar';
+import Image from 'next/image';
 
 
 const AboutPage = () => {
@@ -111,6 +112,61 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+  <section className="relative w-full bg-white py-16 lg:py-24 overflow-hidden max-w-7xl mx-auto px-6 lg:-mt-36  z-10 mt-12">
+      <div className="container mx-auto px-6 lg:px-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+          
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-md lg:max-w-lg">
+              {/* Founder Photo */}
+              <Image
+                src="/joy.png" // Replace with your actual image path
+                alt="Joy CEO"
+                width={300}
+                height={450}
+                className="w-full h-auto object-contain p-5"
+                priority
+              />
+              
+              {/* Bottom Gradient Overlay (to create the fade-to-white effect) */}
+              <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent" />
+            </div>
+          </div>
+            <div className="relative">
+        
+            <div 
+              className="absolute -top-16 -left-10 w-40 h-40 z-0 opacity-50 select-none pointer-events-none"
+              style={{
+                backgroundImage: "url('/Quote_shape.png')",
+                backgroundSize: 'contain',
+                backgroundRepeat: 'no-repeat'
+              }}
+            />
+
+            <div className="relative z-10">
+              <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-8 tracking-tight">
+                From the Founder
+              </h2>
+              
+              <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-lg">
+                From day one, our focus has been on doing things the right way. 
+                That means planning thoroughly, communicating openly, prioritizing 
+                safety, and taking full responsibility for every project we undertake. 
+                We don't cut corners, and we don't make promises we can't keep.
+              </p>
+
+              <div>
+                <p className="text-xl font-bold text-[#ef4444]">Joy Joseph</p>
+                <p className="text-sm font-semibold text-gray-400 tracking-widest uppercase">
+                  Chairman and MD of Sevana Groups
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
      
     </div>
   );

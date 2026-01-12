@@ -24,9 +24,9 @@ export interface BrandPageData {
 export type PageContentMap = Record<string, BrandPageData>;
 export const pageContent: PageContentMap = {
   "food-beverages": {
-    breadcrumb: [{ name: "Home", link: "/" }, { name: "Brands", link: "" }, { name: "Food&Beverages" }],
-    title: "Food&Beverages",
-    heroImage: "/food&beverages.png",
+    breadcrumb: [{ name: "Home", link: "/" }, { name: "Brands", link: "" }, { name: "Food & Beverages" }],
+    title: "Food & Beverages",
+    heroImage: "/foodnbeverages.jpg",
     badge: "Our Food Brands",
     introTitle: "Nourishing Everyday Moments",
     description: "Our food brands are crafted to bring quality, taste, and nutrition to everyday meals. From essential staples to convenient packaged foods.",
@@ -107,7 +107,7 @@ export const pageContent: PageContentMap = {
   "consumer-electronics": {
     breadcrumb: [{ name: "Home", link: "/" }, { name: "Brands", link: "" }, { name: "Consumer & Electronics" }],
     title: "Consumer & Electronics",
-    heroImage: "/consumer&electronics.png",
+    heroImage: "/consumer&electronic.jpg",
     badge: "Our Consumer&Electronics Brands",
     introTitle: "Quality & Safety Standards",
     description: "Our consumer and electronics products are designed to enhance everyday living through smart, reliable, and user-friendly technology. We focus on creating practical solutions that blend innovation with durability to meet the needs of modern consumers.",

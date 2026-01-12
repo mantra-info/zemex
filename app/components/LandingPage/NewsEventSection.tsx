@@ -1,13 +1,13 @@
 "use client"
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
-
+import { motion } from 'framer-motion';
 export default function NewsEventsSection() {
   const newsItems = [
     {
       date: "1 Dec 2025",
       title: "Shaping the Future of Everyday Living Through Innovation",
-      image: "/glowradiant.jpg"
+      image: "/foodnbeverages.jpg"
     },
     {
       date: "20 Nov 2025",
@@ -17,7 +17,7 @@ export default function NewsEventsSection() {
     {
       date: "02 Nov 2025",
       title: "Glow Begins Here: The Secret Behind Radiant Skin",
-      image: "/healthpersonal.jpg"
+      image: "/glowradiant.jpg"
     }
   ];
 
@@ -42,10 +42,15 @@ export default function NewsEventsSection() {
         {/* News Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {newsItems.map((item, index) => (
-            <div
-              key={index}
-              className="group relative rounded-3xl overflow-hidden  backdrop-blur-sm cursor-pointer transition-all duration-500 hover:scale-[1.02]"
-            >
+           <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.6 }}
+  whileHover={{ y: -8 }}
+  className="group relative rounded-3xl overflow-hidden"
+>
+
               <div className="relative h-64 overflow-hidden">
                 <img
                   src={item.image}
@@ -61,7 +66,7 @@ export default function NewsEventsSection() {
                   {item.title}
                 </h3>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

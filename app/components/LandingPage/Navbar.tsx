@@ -60,7 +60,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Link href="/news-events" className="text-white text-sm font-medium opacity-90 hover:opacity-100 transition-opacity">News&Events</Link>
+          <Link href="/news-events" className="text-white text-sm font-medium opacity-90 hover:opacity-100 transition-opacity">News & Events</Link>
         </div>
 
         {/* Contact Button */}
@@ -112,7 +112,7 @@ const Navbar = () => {
               </div>
             </div>
 
-            <Link href="/news-events" onClick={() => setIsOpen(false)} className="text-white text-2xl font-medium">News&Events</Link>
+            <Link href="/news-events" onClick={() => setIsOpen(false)} className="text-white text-2xl font-medium">News & Events</Link>
           </div>
 
           <Link href="/contact" onClick={() => setIsOpen(false)} className="mt-12 text-white flex items-center gap-3 text-xl font-bold border-b border-white/20 pb-2 w-fit">
