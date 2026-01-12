@@ -20,7 +20,7 @@ export default function Hero() {
           loop
           muted
           playsInline
-          poster="foodnbeverages.jpg"
+          poster="/zemexhero.webp"
           className="w-full h-full object-cover opacity-90 brightness-75"
         >
           <source src="/herozemex.mp4" type="video/mp4" />
