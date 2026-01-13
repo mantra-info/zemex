@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="relative h-screen w-full overflow-hidden bg-black">
       <Navbar />
 
-      {/* Video */}
+ 
       <motion.div
         variants={fade}
         initial="hidden"
@@ -27,7 +27,7 @@ export default function Hero() {
         </video>
       </motion.div>
 
-      {/* Text */}
+  
       <div className="relative z-10 h-full flex flex-col justify-end px-6 pb-20 md:px-16 lg:px-24 max-w-[1440px] mx-auto">
         <motion.h1
           variants={fadeUp}

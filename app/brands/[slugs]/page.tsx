@@ -1,14 +1,15 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import { pageContent } from '@/utils/pageData';
+import Image from 'next/image';
 
 interface PageProps {
-  params: Promise<{ slugs: string }>; 
+  params: Promise<{ slugs: string }>;
 }
 
 export default async function DynamicBrandPage({ params }: PageProps) {
 
-  const { slugs } = await params; 
+  const { slugs } = await params;
   const data = pageContent[slugs];
 
   if (!data) {
@@ -19,7 +20,7 @@ export default async function DynamicBrandPage({ params }: PageProps) {
 
   return (
     <div className="w-full bg-white font-sans antialiased">
-      {/* 1. DARK HERO HEADER */}
+
       <section className="bg-[#0d1b3e] pt-6 pb-48 px-6">
         <div className="max-w-7xl mx-auto">
           <nav className="flex items-center space-x-2 text-xs text-gray-400 mb-12">
@@ -34,25 +35,28 @@ export default async function DynamicBrandPage({ params }: PageProps) {
               </React.Fragment>
             ))}
           </nav>
-          
+
           <h1 className="text-4xl md:text-5xl font-semibold text-white text-center leading-relaxed">
             {data.title}
           </h1>
         </div>
       </section>
 
-      {/* 2. OVERLAPPING HERO IMAGE */}
       <div className="max-w-7xl mx-auto px-6 -mt-40 relative z-10">
         <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white/5">
-          <img 
-            src={data.heroImage} 
-            alt={data.title} 
-            className="w-full h-[350px] md:h-[550px] object-cover" 
-          />
+          <div className="relative w-full h-[350px] md:h-[550px]">
+            <Image
+              src={data.heroImage}
+              alt={data.title}
+              fill
+              className="object-cover"
+              sizes="100vw"
+              priority
+            />
+          </div>
         </div>
       </div>
 
-      {/* 3. NARRATIVE SECTION */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           {data.badge && (
@@ -65,19 +69,25 @@ export default async function DynamicBrandPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* 4. DYNAMIC GRID */}
+
       <section className="pb-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className={`grid gap-8 justify-center ${
-            data.items.length === 1 ? 'grid-cols-1 max-w-sm mx-auto' : 
-            data.items.length === 2 ? 'grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto' : 
-            'grid-cols-1 md:grid-cols-4'
-          }`}>
+          <div className={`grid gap-8 justify-center ${data.items.length === 1 ? 'grid-cols-1 max-w-sm mx-auto' :
+            data.items.length === 2 ? 'grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto' :
+              'grid-cols-1 md:grid-cols-4'
+            }`}>
             {data.items.map((item, idx) => (
               <div key={idx} className="flex flex-col items-center group">
                 <div className="w-full aspect-square rounded-[2.5rem] bg-[#f8faff] border border-blue-100/50 flex flex-col items-center justify-center p-3 transition-all duration-300 hover:shadow-xl hover:bg-white mb-6 self-center">
                   {item.image ? (
-                    <img src={item.image} alt={item.name} className="max-h-fit object-contain" />
+
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={300}
+                      height={300}
+                      className="max-h-fit object-contain"
+                    />
                   ) : (
                     <div className="text-center">
                       <h3 className="text-4xl md:text-5xl font-black text-[#1f2937] tracking-tight">

@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section className="w-full bg-black flex flex-col lg:flex-row">
       
-      {/* Video */}
+
       <motion.div
         variants={fadeUp}
         initial="hidden"
@@ -19,7 +19,7 @@ export default function AboutSection() {
         </video>
       </motion.div>
 
-      {/* Text */}
+ 
       <motion.div
         variants={stagger}
         initial="hidden"
